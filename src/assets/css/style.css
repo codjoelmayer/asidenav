@@ -1,0 +1,46 @@
+:is(*, *::after, *::before) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+:is(.wrapper) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: minmax(100dvh, 100%) auto;
+}
+
+:is(.wrapper) :nth-child(1) {
+    grid-column: 1/2;
+}
+
+:is(.wrapper) :nth-child(2) {
+    grid-column: 2/-1;
+
+}
+
+:is(.wrapper) :last-child {
+    grid-row: -1;
+    grid-column: 1 / -1;
+}
+
+nav {
+    padding: 30px;
+}
+
+nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+    color: #42b983;
+}
